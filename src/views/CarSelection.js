@@ -74,37 +74,25 @@ function CarSelection({ navigation, route }) {
           {destination.name}, {destination.location.address}
         </Text>
       </View>
-      <View style={styles.buttonRow}>
-        <View style={styles.buttonContainer}>
-          <Button
-            title={`Bike | ${fares.bike} Rs./Km `}
-            onPress={() => calculateFare('bike')}
-            style={styles.button}
-          />
-        </View>
-        <View style={[styles.buttonContainer, { marginLeft: 10 }]}>
-          <Button
-            title={`Rickshaw | ${fares.rickshaw} Rs./Km `}
-            onPress={() => calculateFare('rickshaw')}
-            style={styles.button}
-          />
-        </View>
+      <View style={styles.iconRow}>
+        <TouchableOpacity onPress={() => calculateFare('bike')} style={styles.iconButton}>
+          <Image source={require('../../assets/bike-icon.png')} style={styles.icon} />
+          <Text style={styles.iconText}>{`Bike | ${fares.bike} Rs./Km`}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => calculateFare('rickshaw')} style={[styles.iconButton, { marginLeft: 10 }]}>
+          <Image source={require('../../assets/rickshaw-icon.png')} style={styles.icon} />
+          <Text style={styles.iconText}>{`Rickshaw | ${fares.rickshaw} Rs./Km`}</Text>
+        </TouchableOpacity>
       </View>
-      <View style={styles.buttonRow}>
-        <View style={styles.buttonContainer}>
-          <Button
-            title={`Car | ${fares.car} Rs./Km `}
-            onPress={() => calculateFare('car')}
-            style={styles.button}
-          />
-        </View>
-        <View style={[styles.buttonContainer, { marginLeft: 10 }]}>
-          <Button
-            title={`Bus | ${fares.bus} Rs./Km `}
-            onPress={() => calculateFare('bus')}
-            style={styles.button}
-          />
-        </View>
+      <View style={styles.iconRow}>
+        <TouchableOpacity onPress={() => calculateFare('car')} style={styles.iconButton}>
+          <Image source={require('../../assets/icons8-car-94.png')} style={styles.icon} />
+          <Text style={styles.iconText}>{`Car | ${fares.car} Rs./Km`}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity onPress={() => calculateFare('bus')} style={[styles.iconButton, { marginLeft: 10 }]}>
+          <Image source={require('../../assets/bus-icon.png')} style={styles.icon} />
+          <Text style={styles.iconText}>{`Bus | ${fares.bus} Rs./Km`}</Text>
+        </TouchableOpacity>
       </View>
       <View style={styles.bookRideButtonContainer}>
         <Button
@@ -125,7 +113,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
   },
   locationContainer: {
-    marginBottom: 20,
+    marginBottom: 30,
   },
   headerText: {
     fontSize: 18,
@@ -137,21 +125,40 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontWeight: 'bold',
   },
-  buttonRow: {
+  iconRow: {
     flexDirection: 'row',
-    marginBottom: 20,
+    marginBottom: 50,
+    marginTop: 50,
   },
-  buttonContainer: {
+  iconButton: {
     flex: 1,
+    alignItems: 'center',
   },
-  button: {
-    flex: 1,
-    borderRadius: 10,
+  icon: {
+    width: 80,
+    height: 80,
+    // borderRadius: 40,
+    marginBottom: 10,
   },
+  iconText: {
+    textAlign: 'center',
+    fontWeight: 'bold',
+  },
+  // buttonRow: {
+  //   flexDirection: 'row',
+  //   marginBottom: 20,
+  // },
+  // buttonContainer: {
+  //   flex: 1,
+  // },
+  // button: {
+  //   flex: 1,
+  //   borderRadius: 20,
+  // },
   bookRideButtonContainer: {
     marginTop: 'auto',
     width: '100%',
-    marginBottom: 20
+    marginBottom: 40
   },
   bookRideButton: {
     borderRadius: 10,

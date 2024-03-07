@@ -93,6 +93,7 @@ const Destination = ({ navigation, route }) => {
       <TextInput
         placeholder="Search places here..."
         onChangeText={searchPlaces}
+        style={styles.textInput}
       />
       {!destination && (
         <View>
@@ -151,6 +152,23 @@ const styles = {
     flex: 1,
     justifyContent: "flex-start",
     paddingHorizontal: 20,
+  },
+  textInput: {
+    width: '100%',
+    borderWidth: 1,
+    borderColor: 'lightblue',
+    borderRadius: 5,
+    paddingHorizontal: 10,
+    paddingVertical: 8,
+    marginBottom: 10,
+    shadowColor: "blue",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
   text: {
     fontSize: 24,

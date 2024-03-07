@@ -84,7 +84,7 @@ const Pickup = ({ navigation }) => {
   return (
     <View style={styles.container}>
       {/* <Text style={styles.text}>Pickup</Text> */}
-      <TextInput placeholder="Search places here..." onChangeText={searchPlaces} />
+      <TextInput style={styles.textInput} placeholder="Search places here..." onChangeText={searchPlaces} />
       {!pickup && (
         <View>
           {places.map((item, index) => {
@@ -143,6 +143,23 @@ const styles = {
     justifyContent: "flex-start",
     paddingHorizontal: 20,
   },
+  textInput: {
+    width: '100%',
+    borderWidth: 1,
+    borderColor: 'lightblue',
+    borderRadius: 5,
+    paddingHorizontal: 10,
+    paddingVertical: 8,
+    marginBottom: 10,
+    shadowColor: "blue",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
+  },
   text: {
     fontSize: 24,
     textAlign: "center",
@@ -154,7 +171,7 @@ const styles = {
   },
   map: {
     width: "100%",
-    height: "80%",
+    height: "70%",
   },
 };
 
